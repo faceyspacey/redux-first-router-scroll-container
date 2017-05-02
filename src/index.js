@@ -1,7 +1,8 @@
+// @flow
 import React from 'react'
 import ReactDOM from 'react-dom'
 import warning from 'warning'
-import { scrollBehavior } from '../../pure-redux-router/src'
+import { scrollBehavior } from 'redux-first-router'
 
 type Props = {
   scrollKey: string,

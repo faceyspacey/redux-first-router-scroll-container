@@ -8,7 +8,13 @@ module.exports = {
     sourceType: 'module',
     allowImportExportEverywhere: false
   },
-  extends: ['airbnb'],
+  plugins: ['flowtype'],
+  extends: ['airbnb', 'plugin:flowtype/recommended'],
+  settings: {
+    flowtype: {
+      onlyFilesWithFlowAnnotation: true
+    }
+  },
   globals: {
     window: true,
     document: true,
@@ -21,8 +27,7 @@ module.exports = {
     test: true,
     it: true,
     expect: true,
-    beforeEach: true,
-    sessionStorage: true
+    beforeEach: true
   },
   'import/resolver': {
     node: {
@@ -30,7 +35,7 @@ module.exports = {
     }
   },
   'import/extensions': ['.js'],
-  'import/ignore': ['node_modules', '\\.(css|styl|svg|json)$'],
+  'import/ignore': ['node_modules', 'flow-typed', '\\.(css|styl|svg|json)$'],
   rules: {
     'no-shadow': 0,
     'no-use-before-define': 0,
@@ -50,32 +55,15 @@ module.exports = {
     'import/no-named-default': 1,
     'no-unused-vars': 1,
     'import/no-unresolved': 1,
-    'class-methods-use-this': 1,
+    'flowtype/no-weak-types': 1,
     semi: [2, 'never'],
     'no-console': [2, { allow: ['warn', 'error'] }],
+    'flowtype/semi': [2, 'never'],
     'jsx-quotes': [2, 'prefer-single'],
     'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.js'] }],
     'spaced-comment': [2, 'always', { markers: ['?'] }],
     'arrow-parens': [2, 'as-needed', { requireForBlockBody: false }],
     'brace-style': [2, 'stroustrup'],
-    'react/sort-comp': [
-      2,
-      {
-        order: [
-          'propTypes',
-          'props',
-          'state',
-          'defaultProps',
-          'contextTypes',
-          'childContextTypes',
-          'getChildContext',
-          'static-methods',
-          'lifecycle',
-          'everything-else',
-          'render'
-        ]
-      }
-    ],
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -104,6 +92,24 @@ module.exports = {
         ignoreRegExpLiterals: true,
         ignoreStrings: true,
         ignoreTemplateLiterals: true
+      }
+    ],
+    'react/sort-comp': [
+      2,
+      {
+        order: [
+          'propTypes',
+          'props',
+          'state',
+          'defaultProps',
+          'contextTypes',
+          'childContextTypes',
+          'getChildContext',
+          'static-methods',
+          'lifecycle',
+          'everything-else',
+          'render'
+        ]
       }
     ]
   }
