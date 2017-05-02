@@ -21,3 +21,4 @@ const MyComponent =>
 
 ## Thanks
 This package is a port of the corresponding component within https://github.com/taion/react-router-scroll . Thanks for pioneering this route, particularly @taion for the amazing `scroll-behavior` package which supports all such components. 
+
