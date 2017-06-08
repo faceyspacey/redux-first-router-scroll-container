@@ -1,5 +1,7 @@
 # redux-first-router-scroll-container
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/faceyspacey/redux-first-router-scroll-container.svg)](https://greenkeeper.io/)
+
 Use `<ScrollContainer>` to facilitate scroll restoration for elements other than `window`. Each `<ScrollContainer>` must be given a unique `scrollKey`, and can be given an optional `shouldUpdateScroll` callback that behaves the same as in [redux-first-router-restore-scroll](https://github.com/faceyspacey/redux-first-router-restore-scroll).
 
 You must use this component in conjunction with [redux-first-router-restore-scroll](https://github.com/faceyspacey/redux-first-router-restore-scroll) and of course [redux-first-router](https://github.com/faceyspacey/redux-first-router) itself. Once both are installed, you can simply use the component as shown below to wrap your scrollable element. No context `<Provider>` element is needed to wrap your app.
